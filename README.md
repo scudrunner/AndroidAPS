@@ -1,3 +1,9 @@
+# Notice
+
+This is an unofficial branch for [AndroidAPS](https://github.com/MilosKozak/AndroidAPS) for Omnipod support to use together with [omnipy](https://github.com/winemug/omnipy)
+
+It is in active development and may have bugs. Please take a look at the [omnipy wiki](https://github.com/winemug/omnipy/wiki) for setup and configuration instructions.
+
 # AndroidAPS
 
 * Check the wiki: http://wiki.androidaps.org
