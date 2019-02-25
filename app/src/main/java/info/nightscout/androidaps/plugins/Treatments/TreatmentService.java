@@ -367,18 +367,58 @@ public class TreatmentService extends OrmLiteBaseService<DatabaseHelper> {
                 return new UpdateReturn(true, true);
             }
             if (treatment.source == Source.USER) {
-                getDao().create(treatment);
-                if (L.isEnabled(L.DATATREATMENTS))
-                    log.debug("New record from: " + Source.getString(treatment.source) + " " + treatment.toString());
+                Boolean newRecord = true;
+                Treatment existingTreatment = getUserRecordByDate(treatment.date);
+                if (existingTreatment != null) {
+                    // another treatment exists. Update it with the treatment coming from the UI
+                    if (L.isEnabled(L.DATATREATMENTS))
+                        log.debug("User record already found in database: " + existingTreatment.toString() + " wanting to add " + treatment.toString());
+
+                    existingTreatment.insulin = treatment.insulin;
+                    existingTreatment.carbs = treatment.carbs;
+                    getDao().update(existingTreatment);
+                    newRecord = false;
+                }
+                else
+                {
+                    getDao().create(treatment);
+                    if (L.isEnabled(L.DATATREATMENTS))
+                        log.debug("New record from: " + Source.getString(treatment.source) + " " + treatment.toString());
+                }
                 DatabaseHelper.updateEarliestDataChange(treatment.date);
                 scheduleTreatmentChange(treatment);
-                return new UpdateReturn(true, true);
+                return new UpdateReturn(true, newRecord);
             }
         } catch (SQLException e) {
             log.error("Unhandled exception", e);
         }
         return new UpdateReturn(false, false);
     }
+
+    /**
+     * Returns the user treatment record for the given date, null if none, logs a warning
+     * if multiple records on the same date exist.
+     */
+    @Nullable
+    public Treatment getUserRecordByDate(long date) {
+        try {
+            QueryBuilder<Treatment, Long> queryBuilder = getDao().queryBuilder();
+            Where where = queryBuilder.where();
+            where.eq("date", date);
+            where.and();
+            where.eq("source", Source.USER);
+
+            List<Treatment> result = getDao().query(queryBuilder.prepare());
+            if (result.isEmpty())
+                return null;
+            if (result.size() > 1)
+                log.warn("Multiple records with the same date found (returning first one): " + result.toString());
+            return result.get(0);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 
     /**
      * Returns the record for the given id, null if none, throws RuntimeException

@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/cardColorBackground"
+    tools:context=".plugins.PumpOmnipod.OmnipodFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textviewOmnipyConnection"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="@string/omnipy_connection_settings"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_host_text" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_auth_status" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_last_conn" />
+
+            <Button
+                android:id="@+id/btnCheckOmnipyConnection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/omnipy_check_conn" />
+
+            <TextView
+                android:id="@+id/textviewPodStatus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="@string/omnipod_pod_status"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipod_status_last_update" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_pod_lot" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_pod_tid" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_pod_address" />
+
+            <TextView
+                android:id="@+id/textviewActions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="@string/omnipod_pod_actions"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+            <Button
+                android:id="@+id/btnNewPod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipod_cmd_new_pod" />
+
+            <Button
+                android:id="@+id/btnUpdateStatus"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/omnipod_cmd_update_status" />
+
+            <Button
+                android:id="@+id/btnClearAlerts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_cmd_clear_alerts" />
+
+            <Button
+                android:id="@+id/btnDeactivatePod"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipod_cmd_deactivate_pod" />
+
+            <TextView
+                android:id="@+id/textviewHistory"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/cardview_dark_background"
+                android:text="@string/omnipy_history"
+                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</FrameLayout>

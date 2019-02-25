@@ -1,30 +1,62 @@
 package info.nightscout.androidaps.plugins.PumpOmnipod;
 
-import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
-import android.os.Handler;
-import android.support.annotation.Nullable;
+import android.support.annotation.NonNull;
+import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
 
 import com.squareup.otto.Subscribe;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import java.util.Objects;
 
-import info.nightscout.androidaps.MainApp;
 import info.nightscout.androidaps.R;
-import info.nightscout.androidaps.db.ExtendedBolus;
-import info.nightscout.androidaps.db.TemporaryBasal;
 import info.nightscout.androidaps.plugins.Common.SubscriberFragment;
-import info.nightscout.androidaps.plugins.PumpCommon.defs.PumpType;
 import info.nightscout.androidaps.plugins.PumpVirtual.events.EventVirtualPumpUpdateGui;
-import info.nightscout.androidaps.plugins.Treatments.TreatmentsPlugin;
-import info.nightscout.utils.FabricPrivacy;
 
 public class OmnipodFragment extends SubscriberFragment {
+
+    public OmnipodFragment() {
+        // Required empty public constructor
+    }
+
+    public static OmnipodFragment newInstance() {
+        return new OmnipodFragment();
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        Intent intent = Objects.requireNonNull(getActivity()).getIntent();
+        if (intent != null) {
+
+            Bundle extras = intent.getExtras();
+            if (extras != null) {
+                String address = extras.getString("omnipy_address");
+                if (address != null) {
+                    //
+                }
+            }
+        }
+    }
+
+    @Subscribe
+    public void onStatusEvent(final EventVirtualPumpUpdateGui ev) {
+        updateGUI();
+    }
+
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.fragment_omnipod, container, false);
+    }
+
     @Override
     protected void updateGUI() {
 

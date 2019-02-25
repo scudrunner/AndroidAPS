@@ -138,7 +138,6 @@
         </provider>
 
         <!-- Service processing incomming data -->
-        <service android:name="org.eclipse.paho.android.service.MqttService"/>
         <service
             android:name=".services.DataService"
             android:exported="false" />

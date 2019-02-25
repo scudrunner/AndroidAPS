@@ -7,8 +7,6 @@ buildscript {
     dependencies {
         classpath 'io.fabric.tools:gradle:1.+'
         classpath 'com.dicedmelon.gradle:jacoco-android:0.1.2'
-        classpath 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.1.0'
-        classpath 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
     }
 }
 apply plugin: "com.android.application"
@@ -233,8 +231,6 @@ dependencies {
     androidTestImplementation "org.mockito:mockito-core:2.7.22"
     androidTestImplementation "com.google.dexmaker:dexmaker:${dexmakerVersion}"
     androidTestImplementation "com.google.dexmaker:dexmaker-mockito:${dexmakerVersion}"
-    implementation 'org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.0'
-    implementation 'org.eclipse.paho:org.eclipse.paho.android.service:1.1.1'
 }
 
 task unzip(type: Copy) {

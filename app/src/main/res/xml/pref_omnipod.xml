@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="@string/omnipy_connection_settings">
+        <SwitchPreference
+            android:defaultValue="true"
+            android:title="@string/omnipy_auto_detect_host"
+            android:key="@string/key_omnipy_autodetect_host"
+            android:disableDependentsState="true"
+            />
+        <EditTextPreference
+            android:title="@string/omnipy_host_ip"
+            android:defaultValue=""
+            android:dependency="@string/key_omnipy_autodetect_host"
+            android:key="@string/key_omnipy_host"
+            />
+        <EditTextPreference
+            android:title="@string/omnipy_set_http_password"
+            android:defaultValue=""
+            android:key="@string/key_omnipy_password"/>
+    </PreferenceCategory>
+    <!--<PreferenceCategory android:title="@string/omnipod_notification_Settings">-->
+        <!--<SwitchPreference-->
+            <!--android:defaultValue="false"-->
+            <!--android:title="@string/omnipy_bolus_alerts"-->
+            <!--android:key="omnipod_bolus_notify"-->
+            <!--android:enabled="false"-->
+            <!--/>-->
+        <!--<SwitchPreference-->
+            <!--android:defaultValue="false"-->
+            <!--android:title="@string/omnipod_temp_basal_alerts"-->
+            <!--android:key="omnipod_tempbasal_notify"-->
+            <!--android:enabled="false"-->
+            <!--/>-->
+    <!--</PreferenceCategory>-->
+    <!--<PreferenceCategory android:title="@string/omnipod_safety_limits">-->
+        <!--<EditTextPreference-->
+            <!--android:defaultValue="10"-->
+            <!--android:title="@string/omniod_max_bolus"-->
+            <!--android:key="omnipod_max_bolus"-->
+            <!--/>-->
+        <!--<EditTextPreference-->
+            <!--android:defaultValue="15"-->
+            <!--android:title="@string/omniod_max_temp_basal"-->
+            <!--android:key="omnipod_tempbasal_notify"-->
+            <!--/>-->
+    <!--</PreferenceCategory>-->
+</PreferenceScreen>
