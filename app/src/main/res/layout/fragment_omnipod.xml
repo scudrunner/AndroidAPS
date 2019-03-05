@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/cardColorBackground"
-    tools:context=".plugins.PumpOmnipod.OmnipodFragment">
+    tools:context=".plugins.pump.omnipod.OmnipodFragment">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -42,10 +42,22 @@
                 android:text="@string/omnipy_last_conn" />
 
             <Button
-                android:id="@+id/btnCheckOmnipyConnection"
+                android:id="@+id/omnipy_btn_check_connection"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:text="@string/omnipy_check_conn" />
+
+            <Button
+                android:id="@+id/omnipy_btn_restart_remote_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_restart_remote" />
+
+            <Button
+                android:id="@+id/omnipy_btn_shutdown_remote_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_shutdown_remote" />
 
             <TextView
                 android:id="@+id/textviewPodStatus"
