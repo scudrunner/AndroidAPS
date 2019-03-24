@@ -20,44 +20,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/cardview_dark_background"
-                android:text="@string/omnipy_connection_settings"
+                android:text="@string/omnipy_connection_status"
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
             <TextView
-                android:id="@+id/textView8"
+                android:id="@+id/omnipy_txt_connection_status"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_host_text" />
-
-            <TextView
-                android:id="@+id/textView9"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_auth_status" />
-
-            <TextView
-                android:id="@+id/textView7"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_last_conn" />
-
-            <Button
-                android:id="@+id/omnipy_btn_check_connection"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:text="@string/omnipy_check_conn" />
-
-            <Button
-                android:id="@+id/omnipy_btn_restart_remote_host"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_restart_remote" />
-
-            <Button
-                android:id="@+id/omnipy_btn_shutdown_remote_host"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_shutdown_remote" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textviewPodStatus"
@@ -68,28 +37,9 @@
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/omnipy_txt_pod_status"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipod_status_last_update" />
-
-            <TextView
-                android:id="@+id/textView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_pod_lot" />
-
-            <TextView
-                android:id="@+id/textView5"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_pod_tid" />
-
-            <TextView
-                android:id="@+id/textView6"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/omnipy_pod_address" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:id="@+id/textviewActions"
@@ -100,28 +50,53 @@
                 android:textAppearance="@android:style/TextAppearance.Material.Large" />
 
             <Button
+                android:id="@+id/omnipy_btn_check_connection"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/omnipy_check_conn"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/omnipy_btn_restart_remote_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_restart_remote"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/omnipy_btn_shutdown_remote_host"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/omnipy_shutdown_remote"
+                android:visibility="gone" />
+
+            <Button
                 android:id="@+id/btnNewPod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/omnipod_cmd_new_pod" />
+                android:text="@string/omnipod_cmd_new_pod"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btnUpdateStatus"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:text="@string/omnipod_cmd_update_status" />
+                android:text="@string/omnipod_cmd_update_status"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btnClearAlerts"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/omnipy_cmd_clear_alerts" />
+                android:text="@string/omnipy_cmd_clear_alerts"
+                android:visibility="gone" />
 
             <Button
                 android:id="@+id/btnDeactivatePod"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="@string/omnipod_cmd_deactivate_pod" />
+                android:text="@string/omnipod_cmd_deactivate_pod"
+                android:visibility="gone" />
 
             <TextView
                 android:id="@+id/textviewHistory"
@@ -129,7 +104,8 @@
                 android:layout_height="wrap_content"
                 android:background="@color/cardview_dark_background"
                 android:text="@string/omnipy_history"
-                android:textAppearance="@android:style/TextAppearance.Material.Large" />
+                android:textAppearance="@android:style/TextAppearance.Material.Large"
+                android:visibility="gone" />
 
         </LinearLayout>
     </ScrollView>

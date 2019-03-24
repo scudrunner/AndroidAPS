@@ -1335,6 +1335,7 @@
     <string name="key_omnipod_status">key_omnipod_status</string>
     <string name="omnipod_pdm_header">Omnipod PDM</string>
     <string name="omnipy_connection">Omnipy Connection</string>
+    <string name="omnipy_connection_status">Connection Status</string>
     <string name="omnipod_pod_status">Pod Status</string>
     <string name="omnipod_pod_actions">Pod Actions</string>
     <string name="omnipy_host_text">Host:</string>

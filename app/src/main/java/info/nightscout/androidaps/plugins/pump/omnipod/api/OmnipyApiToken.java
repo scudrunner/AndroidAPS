@@ -1,4 +1,4 @@
-package info.nightscout.androidaps.plugins.pump.omnipod;
+package info.nightscout.androidaps.plugins.pump.omnipod.api;
 
 import java.security.InvalidKeyException;
 import java.security.NoSuchAlgorithmException;
@@ -8,8 +8,8 @@ import javax.crypto.NoSuchPaddingException;
 
 public class OmnipyApiToken {
 
-    private byte[] _token;
-    private OmnipyApiSecret _secret;
+    private final byte[] _token;
+    private final OmnipyApiSecret _secret;
     private byte[] _iv;
     private byte[] _auth;
 

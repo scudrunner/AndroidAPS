@@ -377,7 +377,7 @@ public class MainActivity extends AppCompatActivity {
                 return true;
             case R.id.nav_about:
                 AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                builder.setTitle(MainApp.gs(R.string.app_name) + " " + BuildConfig.VERSION);
+                builder.setTitle(MainApp.gs(R.string.app_name) + " " + BuildConfig.VERSION + " for omnipy v1.2");
                 builder.setIcon(MainApp.getIcon());
                 String message = "Build: " + BuildConfig.BUILDVERSION + "\n";
                 message += "Flavor: " + BuildConfig.FLAVOR + BuildConfig.BUILD_TYPE + "\n";
